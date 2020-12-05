@@ -36,7 +36,7 @@ document.getElementById('btnOver').addEventListener('click', function () {
             answerField.innerText = answerPhrase;
             gameRun = false;
         } else {
-            minValue = answerNumber  + 1;                 
+            minValue = answerNumber  + 1;
             answerNumber  = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
@@ -57,72 +57,15 @@ document.getElementById('btnLess').addEventListener('click', function () {
             gameRun = false;
         } else {
             maxValue = answerNumber  - 1;
-            answerNumber  = Math.floor((minValue+(maxValue - minValue)));
+            answerNumber  = Math.floor((maxValue - minValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
             answerField.innerText = `Вы загадали число ${answerNumber }?`;
-
         }
     }
 })
 
-let oneNine = {
-    1: "один",
-    2: "два",
-    3: "три",
-    4: "четыре",
-    5: "пять",
-    6: "шесть",
-    7: "семь",
-    8: "восемь",
-    9: "девять"
-};
-let tenNineteen = {
-    10: "десять",
-    11: "одиннадцать",
-    12: "двенадцать",
-    13: "тринадцать",
-    14: "четырнадцать",
-    15: "пятнадцать",
-    16: "шестнадцать",
-    17: "семнадцать",
-    18: "восемнадцать",
-    19: "девятнадцать"
-};
-let dozens = {
-    20: "двадцать",
-    30: "тридцать",
-    40: "сорок",
-    50: "пятьдесят",
-    60: "шестьдесят",
-    70: "семьдесят",
-    80: "восемьдеся",
-    90: "девяносто"
-};
-let hundreds = {
-    100: "сто",
-    200: "двести",
-    300: "тристопятьсот",
-    400: "четыресто",
-    500: "пятьсот",
-    600: "шестьсот",
-    700: "семьсот",
-    800: "восемьсот",
-    900: "девятьсот"
-};
 
-//Текст ответа
-function answerText(){
-const phraseRandom = Math.round(Math.random()*2);
-switch (phraseRandom){
-    case 0:
-        return `Вы загадали число ${Название_функции_перевода_указана_выше(answerNumber)}?`;
-    case 1:
-        return `Может это число ${ Название_функции_перевода_указана_выше (answerNumber)}?`;
-    case 2:
-        return `Думаю... Это число ${ Название_функции_перевода_указана_выше (answerNumber)}?`;
-}
-}
 
 document.getElementById('btnEqual').addEventListener('click', function () {
     if (gameRun){
